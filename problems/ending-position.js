@@ -21,8 +21,10 @@ npm test test/01-ending-position-spec.js
 // the player the number of spaces they should move to from that position.
 
 // If the player moves to a new position with a non-zero number of spaces,
-// they should repeat this process. The player's turn ends when they move to a
-// position with zero spaces or a position that is off of the map.
+// they should repeat this process.
+
+// The player's turn ends when they move to a position with zero spaces or a
+// position that is off of the map.
 
 // There are three different outcomes to a player's turn:
 // 1: If the player ends on a position that has a value of 0, then the function
@@ -45,16 +47,16 @@ npm test test/01-ending-position-spec.js
 let endingPosition = (arr, num) => {
   let position = arr[num];
 
-  if (arr[position] === 0 || arr[position] === undefined) {
-    if (arr[position] === 0) {
+  if (position === 0 || position === undefined) {
+    if (position === 0) {
       return arr.indexOf(position);
-    } else if (arr.indexOf(position) > (arr.length - 1) / 2) {
+    } else if (num > (arr.length - 1) / 2) {
       return "Finish!";
-    } else if (arr.indexOf(position) < (arr.length - 1) / 2) {
+    } else if (num < (arr.length - 1) / 2) {
       return "Game Over...";
     }
-  } else if (arr[position] !== 0) {
-    return endingPosition(arr, arr[position]);
+  } else if (position !== 0) {
+    return endingPosition(arr, num + position);
   }
 };
 
