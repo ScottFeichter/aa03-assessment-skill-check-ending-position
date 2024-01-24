@@ -42,19 +42,21 @@ npm test test/01-ending-position-spec.js
 // You must use recursion to solve this problem.
 // Do NOT mutate the input array.
 
-let endingPosition = (arr, num) {
+let endingPosition = (arr, num) => {
   let position = arr[num];
-  if (position === 0) {
-    return arr.indexOf(position);
-  } else if (indexOf(position) > ((arr.length - 1) / 2)) {
-    return "Finish!";
-  } else if (indexOf(position) < ((arr.length - 1) / 2)) {
-    return "Game Over...";
+
+  if (arr[position] === 0 || arr[position] === undefined) {
+    if (arr[position] === 0) {
+      return arr.indexOf(position);
+    } else if (arr.indexOf(position) > (arr.length - 1) / 2) {
+      return "Finish!";
+    } else if (arr.indexOf(position) < (arr.length - 1) / 2) {
+      return "Game Over...";
+    }
+  } else if (arr[position] !== 0) {
+    return endingPosition(arr, arr[position]);
   }
-  if (arr[position] !== 0) { repeat } else if (arr[position] === 0 || (arr[position] === undefined)) {}
-
-
-}
+};
 
 // Comment these out to debug the test cases in the console:
 console.log(endingPosition([2, 3, 1, 0, 2], 0)); //=> 3
