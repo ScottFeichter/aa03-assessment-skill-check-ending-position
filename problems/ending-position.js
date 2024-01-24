@@ -15,12 +15,14 @@ npm test test/01-ending-position-spec.js
 // should move if they are in that position ofthe map.
 
 // The second parameter is an integer that represents a starting position on
-// the map. When a player is at a position in the map, the element
-// at that position tells the player the number of spaces they should move to
-// from that position. If the player moves to a new position with a non-zero
-// number of spaces, they should repeat this process. The player's turn ends
-// when they move to a position with zero spaces or a position that is off of
 // the map.
+
+// When a player is at a position in the map, the element at that position tells
+// the player the number of spaces they should move to from that position.
+
+// If the player moves to a new position with a non-zero number of spaces,
+// they should repeat this process. The player's turn ends when they move to a
+// position with zero spaces or a position that is off of the map.
 
 // There are three different outcomes to a player's turn:
 // 1: If the player ends on a position that has a value of 0, then the function
@@ -40,7 +42,19 @@ npm test test/01-ending-position-spec.js
 // You must use recursion to solve this problem.
 // Do NOT mutate the input array.
 
-// Your code here
+let endingPosition = (arr, num) {
+  let position = arr[num];
+  if (position === 0) {
+    return arr.indexOf(position);
+  } else if (indexOf(position) > ((arr.length - 1) / 2)) {
+    return "Finish!";
+  } else if (indexOf(position) < ((arr.length - 1) / 2)) {
+    return "Game Over...";
+  }
+  if (arr[position] !== 0) { repeat } else if (arr[position] === 0 || (arr[position] === undefined)) {}
+
+
+}
 
 // Comment these out to debug the test cases in the console:
 console.log(endingPosition([2, 3, 1, 0, 2], 0)); //=> 3
