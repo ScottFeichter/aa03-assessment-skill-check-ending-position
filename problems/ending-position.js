@@ -6,12 +6,16 @@ command in your terminal:
 npm test test/01-ending-position-spec.js
 */
 
-// Define a function using a function expression called endingPosition. The
-// function should should accept two parameters. The first parameter is an array
-// that represents a board game map. Each element in the map represents the
-// number of spaces that the player should move if they are in that position of
-// the map. The second parameter is an integer that represents a starting
-// position on the map. When a player is at a position in the map, the element
+// Define a function using a function expression called endingPosition.
+
+//The function should should accept two parameters.
+
+// The first parameter is an array that represents a board game map.
+// Each element in the map represents the number of spaces that the player
+// should move if they are in that position ofthe map.
+
+// The second parameter is an integer that represents a starting position on
+// the map. When a player is at a position in the map, the element
 // at that position tells the player the number of spaces they should move to
 // from that position. If the player moves to a new position with a non-zero
 // number of spaces, they should repeat this process. The player's turn ends
@@ -36,16 +40,12 @@ npm test test/01-ending-position-spec.js
 // You must use recursion to solve this problem.
 // Do NOT mutate the input array.
 
-
-// Your code here 
-
+// Your code here
 
 // Comment these out to debug the test cases in the console:
-// console.log(endingPosition([2, 3, 1, 0, 2],  0)); //=> 3
-// console.log(endingPosition([2, 3, 1, 0, 2],  1)); //=> 'Finish!'
-// console.log(endingPosition([2, 3, -3, 0, 2], 0)); //=> 'Game Over...'
-
-
+console.log(endingPosition([2, 3, 1, 0, 2], 0)); //=> 3
+console.log(endingPosition([2, 3, 1, 0, 2], 1)); //=> 'Finish!'
+console.log(endingPosition([2, 3, -3, 0, 2], 0)); //=> 'Game Over...'
 
 /******************************** FIRST CHALLENGE *****************************/
 // If the player revisits a position that the player has been before in the same
@@ -57,11 +57,8 @@ npm test test/01-ending-position-spec.js
 // Run the following command to test your code:
 // npm test test/02-ending-position-challenge-spec.js
 
-
 // Comment these out to debug the test cases in the console:
 // console.log(endingPosition([2, 3, -2, 0, 2], 0)); //=> 0
-
-
 
 /******************************* SECOND CHALLENGE *****************************/
 // Suppose that instead of the map representing the number of spaces to move at
@@ -78,7 +75,6 @@ npm test test/01-ending-position-spec.js
 
 // Run the following command to test your code:
 // npm test test/03-ending-position-challenge-spec.js
-
 
 // Comment these out to debug the test cases in the console:
 // let rollDice = (numDie) => numDie + 1;
